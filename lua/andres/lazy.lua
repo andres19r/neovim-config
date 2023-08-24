@@ -1,0 +1,136 @@
+require("lazy").setup({
+  "folke/which-key.nvim",
+  "folke/neodev.nvim",
+  {
+    "ellisonleao/gruvbox.nvim",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
+    "nvim-neorg/neorg",
+    ft = "norg",
+    opts = {
+      load = {
+        ["core.defaults"] = {},
+      },
+    },
+  },
+  { "nvim-tree/nvim-web-devicons", lazy = true },
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.2',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+  {'nvim-treesitter/nvim-treesitter', build=":TSUpdate"},
+  { 'ThePrimeagen/harpoon' },
+  { 'mbbill/undotree' },
+  { 'tpope/vim-fugitive' },
+  -- LSP
+  {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    dependencies = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},             -- Required
+      {'williamboman/mason.nvim'},           -- Optional
+      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},     -- Required
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-nvim-lsp'}, -- Required
+      {'L3MON4D3/LuaSnip'},     -- Required
+    }
+  },
+  'nvim-lualine/lualine.nvim',
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",         -- required
+      "nvim-telescope/telescope.nvim", -- optional
+      "sindrets/diffview.nvim",        -- optional
+    },
+    config = true
+  },
+  {'romgrk/barbar.nvim',
+  dependencies = {
+    'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+    'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+  },
+  init = function() vim.g.barbar_auto_setup = false end,
+  opts = {
+    -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+    -- animation = true,
+    -- insert_at_start = true,
+    -- …etc.
+  },
+},
+{
+  "kylechui/nvim-surround",
+  version = "*", -- Use for stability; omit to use `main` branch for the latest features
+  event = "VeryLazy",
+  config = function()
+    require("nvim-surround").setup({
+      -- Configuration here, or leave empty to use defaults
+    })
+  end
+},
+{
+  'windwp/nvim-autopairs',
+  event = "InsertEnter",
+  opts = {} -- this is equalent to setup({}) function
+},
+{
+  "nvim-tree/nvim-tree.lua",
+  version = "*",
+  lazy = false,
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = function()
+    require("nvim-tree").setup {}
+  end,
+},
+{
+  'lewis6991/gitsigns.nvim',
+  config = function ()
+    require("gitsigns").setup()
+  end
+},
+"folke/trouble.nvim",
+{
+  "SmiteshP/nvim-navic",
+  dependencies = {"neovim/nvim-lspconfig"}
+},
+{
+  "folke/flash.nvim",
+  event = "VeryLazy",
+  opts = {},
+  -- stylua: ignore
+  keys = {
+    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+    { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+  },
+},
+-- add this to your lua/plugins.lua, lua/plugins/init.lua,  or the file you keep your other plugins:
+{
+  'numToStr/Comment.nvim',
+  opts = {
+    -- add any options here
+  },
+  lazy = false,
+},
+{
+  "petertriho/nvim-scrollbar",
+  config = function()
+    require("scrollbar").setup()
+  end
+}
+})
