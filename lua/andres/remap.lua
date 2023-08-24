@@ -46,6 +46,4 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 vim.keymap.set("n", "<leader>wv", "<cmd>vs<CR>")
-vim.keymap.set("n", "<leader>wV", "<cmd>vs<CR><C-w>w")
 vim.keymap.set("n", "<leader>ws", "<cmd>sv<CR>")
-vim.keymap.set("n", "<leader>wS", "<cmd>sv<CR><C-w>w")
