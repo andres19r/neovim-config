@@ -23,6 +23,8 @@ map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
 -- Close buffer
 map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 map('n', '<leader>x', '<Cmd>BufferClose<CR>', opts)
+-- Go to last visited buffer
+map('n', '<leader><tab>', '<Cmd>b#<CR>', opts)
 -- Wipeout buffer
 --                 :BufferWipeout
 -- Close commands
