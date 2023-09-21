@@ -11,7 +11,11 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
   },
-  
+  {
+    "Mofiqul/dracula.nvim",
+    lazy = false,
+    priority = 1000,
+  },
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -148,5 +152,6 @@ require("lazy").setup({
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
   }
-}
+},
+'is0n/fm-nvim'
 })
