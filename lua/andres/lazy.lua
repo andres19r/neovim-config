@@ -50,14 +50,14 @@ require("lazy").setup({
     branch = 'v2.x',
     dependencies = {
       -- LSP Support
-      { 'neovim/nvim-lspconfig' },           -- Required
-      { 'williamboman/mason.nvim' },         -- Optional
+      { 'neovim/nvim-lspconfig' },             -- Required
+      { 'williamboman/mason.nvim' },           -- Optional
       { 'williamboman/mason-lspconfig.nvim' }, -- Optional
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },                -- Required
+      { 'hrsh7th/nvim-cmp' },                  -- Required
       { 'hrsh7th/cmp-buffer' },
-      { 'hrsh7th/cmp-nvim-lsp' },            -- Required
-      { 'L3MON4D3/LuaSnip' },                -- Required
+      { 'hrsh7th/cmp-nvim-lsp' },              -- Required
+      { 'L3MON4D3/LuaSnip' },                  -- Required
     }
   },
   'nvim-lualine/lualine.nvim',
@@ -73,7 +73,7 @@ require("lazy").setup({
   {
     'romgrk/barbar.nvim',
     dependencies = {
-      'lewis6991/gitsigns.nvim',   -- OPTIONAL: for git status
+      'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
       'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     },
     init = function() vim.g.barbar_auto_setup = false end,
@@ -127,14 +127,23 @@ require("lazy").setup({
     opts = {},
     -- stylua: ignore
     keys = {
-      { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
-      { "S",     mode = { "n", "o", "x" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
-      { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
-      { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end,
-                                                                                                  desc =
-        "Treesitter Search" },
-      { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc =
-      "Toggle Flash Search" },
+      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
+      { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "r", mode = "o",               function() require("flash").remote() end,     desc = "Remote Flash" },
+      {
+        "R",
+        mode = { "o", "x" },
+        function() require("flash").treesitter_search() end,
+        desc =
+        "Treesitter Search"
+      },
+      {
+        "<c-s>",
+        mode = { "c" },
+        function() require("flash").toggle() end,
+        desc =
+        "Toggle Flash Search"
+      },
     },
   },
   -- add this to your lua/plugins.lua, lua/plugins/init.lua,  or the file you keep your other plugins:
@@ -165,7 +174,9 @@ require("lazy").setup({
   {
     'simrat39/symbols-outline.nvim',
     config = function()
-      require("symbols-outline").setup()
+      require("symbols-outline").setup({
+        auto_close = true
+      })
     end
   },
 })

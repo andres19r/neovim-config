@@ -1,3 +1,5 @@
+local api = vim.api
+
 vim.o.background = "dark"
 
 vim.opt.nu = true
@@ -36,3 +38,7 @@ vim.opt.updatetime = 50
 
 vim.g.mapleader = " "
 
+api.nvim_create_autocmd(
+  { "BufNewFile", "BufRead" },
+  { pattern = "*.handlebars", command = "set filetype=html" }
+)
