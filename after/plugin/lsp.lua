@@ -1,4 +1,6 @@
 local lsp = require('lsp-zero').preset({})
+local cmp = require('cmp')
+local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 lsp.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
@@ -20,6 +22,9 @@ cmp.setup({
     -- `Enter` key to confirm completion
     ['<Tab>'] = cmp.mapping.confirm({select = false}),
     ['<CR>'] = cmp.mapping.confirm({select = false}),
+
+    ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
 
     -- Ctrl+Space to trigger completion menu
     ['<C-Space>'] = cmp.mapping.complete(),
