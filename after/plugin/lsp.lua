@@ -1,20 +1,18 @@
-local lsp = require('lsp-zero').preset({})
+local lsp_zero = require('lsp-zero').preset({})
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local navic = require("nvim-navic")
 
-lsp.on_attach(function(client, bufnr)
+lsp_zero.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
-  lsp.default_keymaps({ buffer = bufnr })
-  lsp.buffer_autoformat()
+  lsp_zero.default_keymaps({ buffer = bufnr })
+  lsp_zero.buffer_autoformat()
   if client.server_capabilities.documentSymbolProvider then
-    navic.attach(client, bufnr)
+    require('nvim-navic').attach(client, bufnr)
   end
 end)
 
-
-lsp.format_on_save({
+lsp_zero.format_on_save({
   format_opts = {
     async = false,
     timeout_ms = 10000,
@@ -27,13 +25,17 @@ lsp.format_on_save({
 --lsp.setup_servers({'tsserver', 'eslint', 'pyright'})
 
 -- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+require('lspconfig').lua_ls.setup(lsp_zero.nvim_lua_ls())
 
-lsp.setup()
+lsp_zero.setup()
 
 local cmp = require('cmp')
 
 cmp.setup({
+  preselect = 'item',
+  completion = {
+    completeopt = 'menu,menuone,noinsert'
+  },
   mapping = {
     -- `Enter` key to confirm completion
     ['<Tab>'] = cmp.mapping.confirm({ select = false }),

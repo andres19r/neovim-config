@@ -42,3 +42,4 @@ api.nvim_create_autocmd(
   { "BufNewFile", "BufRead" },
   { pattern = "*.handlebars", command = "set filetype=html" }
 )
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
