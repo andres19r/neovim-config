@@ -55,3 +55,4 @@ vim.keymap.set("n", "<A-h>", "<C-w>h")
 vim.keymap.set("n", "<leader>gg", "<cmd>Lazygit<CR>")
 
 vim.keymap.set("n", "<leader>ls", "<cmd>SymbolsOutline<CR>")
+vim.keymap.set("n", "<leader>lb", "<cmd>Navbuddy<CR>")

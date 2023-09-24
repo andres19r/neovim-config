@@ -1,5 +1,6 @@
 local lsp_zero = require('lsp-zero').preset({})
 local cmp = require('cmp')
+local navbuddy = require("nvim-navbuddy")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 lsp_zero.on_attach(function(client, bufnr)
@@ -10,6 +11,7 @@ lsp_zero.on_attach(function(client, bufnr)
   if client.server_capabilities.documentSymbolProvider then
     require('nvim-navic').attach(client, bufnr)
   end
+  navbuddy.attach(client, bufnr)
 end)
 
 lsp_zero.format_on_save({
