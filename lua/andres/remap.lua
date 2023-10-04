@@ -56,3 +56,8 @@ vim.keymap.set("n", "<leader>gg", "<cmd>Lazygit<CR>")
 
 vim.keymap.set("n", "<leader>ls", "<cmd>SymbolsOutline<CR>")
 vim.keymap.set("n", "<leader>lb", "<cmd>Navbuddy<CR>")
+
+vim.keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>")
+vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>")
+vim.keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>")
+vim.keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>")
