@@ -14,4 +14,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require("andres")
 
-vim.cmd [[colorscheme kanagawa]]
+vim.cmd [[colorscheme nightfox]]

@@ -4,6 +4,7 @@ local navbuddy = require("nvim-navbuddy")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 lsp_zero.on_attach(function(client, bufnr)
+  local opts = { buffer = bufnr, remap = false }
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
   lsp_zero.default_keymaps({ buffer = bufnr })
@@ -11,6 +12,12 @@ lsp_zero.on_attach(function(client, bufnr)
     require('nvim-navic').attach(client, bufnr)
   end
   navbuddy.attach(client, bufnr)
+  vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
+  vim.keymap.set("n", "<leader>cR", function() vim.lsp.buf.references() end, opts)
+  vim.keymap.set("n", "<leader>cr", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("n", "<leader>cw", function() vim.lsp.buf.workspace_symbol() end, opts)
+  vim.keymap.set("n", "<leader>cd", function() vim.diagnostic.open_float() end, opts)
+  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 lsp_zero.format_on_save({
