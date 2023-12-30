@@ -14,4 +14,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require("andres")
 
-vim.cmd [[colorscheme nightfox]]
+vim.cmd [[colorscheme gruvbox]]
