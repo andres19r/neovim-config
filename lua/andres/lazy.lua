@@ -198,5 +198,11 @@ require("lazy").setup({
     "christoomey/vim-tmux-navigator",
     lazy = false
   },
-  {'sbdchd/neoformat'}
+  {'sbdchd/neoformat'},
+  {'windwp/nvim-ts-autotag',
+    config = function(_, opts) require('nvim-ts-autotag').setup(opts) end
+  },
+  {'folke/zen-mode.nvim' },
+  {'onsails/lspkind.nvim'},
+  { "rafamadriz/friendly-snippets" }
 })
