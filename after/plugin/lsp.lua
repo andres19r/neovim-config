@@ -12,7 +12,7 @@ lsp_zero.on_attach(function(client, bufnr)
   if client.server_capabilities.documentSymbolProvider then
     require('nvim-navic').attach(client, bufnr)
   end
-  navbuddy.attach(client, bufnr)
+  -- navbuddy.attach(client, bufnr)
   vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
   vim.keymap.set("n", "<leader>cR", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>cr", function() vim.lsp.buf.rename() end, opts)
