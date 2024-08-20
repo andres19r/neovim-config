@@ -28,7 +28,7 @@ require("lazy").setup({
     priority = 1000,
     opts = {},
   },
-  { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "EdenEast/nightfox.nvim" },
   { "shaunsingh/nord.nvim" },
   {
@@ -204,33 +204,10 @@ require("lazy").setup({
     lazy = false
   },
   {'sbdchd/neoformat'},
-<<<<<<< HEAD
   {'windwp/nvim-ts-autotag',
     config = function(_, opts) require('nvim-ts-autotag').setup(opts) end
   },
   {'folke/zen-mode.nvim' },
   {'onsails/lspkind.nvim'},
-  { "rafamadriz/friendly-snippets" }
+  { "rafamadriz/friendly-snippets" },
 })
-=======
-  {
-    'nvim-orgmode/orgmode',
-    event = 'VeryLazy',
-    ft = { 'org' },
-    config = function()
-      -- Setup orgmode
-      require('orgmode').setup({
-        org_agenda_files = '~/orgfiles/**/*',
-        org_default_notes_file = '~/orgfiles/refile.org',
-      })
-
-      -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
-      -- add ~org~ to ignore_install
-      -- require('nvim-treesitter.configs').setup({
-        --   ensure_installed = 'all',
-        --   ignore_install = { 'org' },
-        -- })
-      end,
-    }
-  })
->>>>>>> 47720f7 (feat(lazy): add new themes)
