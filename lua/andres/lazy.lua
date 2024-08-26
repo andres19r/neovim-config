@@ -6,6 +6,7 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
   },
+  {'Shatur/neovim-ayu'},
   { "sainnhe/gruvbox-material"},
   {
     "scottmckendry/cyberdream.nvim",
