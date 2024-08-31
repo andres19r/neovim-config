@@ -14,5 +14,5 @@ vim.opt.rtp:prepend(lazypath)
 
 require("andres")
 
-vim.cmd [[colorscheme ayu-mirage]]
+vim.cmd [[colorscheme eldritch]]
 

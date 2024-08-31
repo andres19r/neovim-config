@@ -2,6 +2,26 @@ require("lazy").setup({
   "folke/which-key.nvim",
   "folke/neodev.nvim",
   {
+    "eldritch-theme/eldritch.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "ribru17/bamboo.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "xero/miasma.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "0xstepit/flow.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
     "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
