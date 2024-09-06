@@ -22,12 +22,16 @@ require("lazy").setup({
     priority = 1000,
   },
   {
+    "oxfist/night-owl.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
     "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
   },
   {'Shatur/neovim-ayu'},
-  { "sainnhe/gruvbox-material"},
   {
     "scottmckendry/cyberdream.nvim",
     lazy = false,
@@ -43,15 +47,8 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
   },
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "EdenEast/nightfox.nvim" },
-  { "shaunsingh/nord.nvim" },
   {
     "nvim-neorg/neorg",
     ft = "norg",
