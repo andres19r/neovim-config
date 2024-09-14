@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>fs", vim.cmd.w)
+vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("i", "fd", "<Esc>")
@@ -45,8 +45,8 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 --     vim.cmd("so")
 -- end)
 
-vim.keymap.set("n", "<leader>wv", "<cmd>vs<CR>")
-vim.keymap.set("n", "<leader>ws", "<cmd>sv<CR>")
+vim.keymap.set("n", "<leader>|", "<cmd>vs<CR>")
+vim.keymap.set("n", "<leader>\\", "<cmd>sv<CR>")
 vim.keymap.set("n", "<A-j>", "<C-w>j")
 vim.keymap.set("n", "<A-k>", "<C-w>k")
 vim.keymap.set("n", "<A-l>", "<C-w>l")
