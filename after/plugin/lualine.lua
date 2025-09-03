@@ -173,7 +173,7 @@ ins_left {
     end
     return msg
   end,
-  icon = ' LSP:',
+  icon = ' ',
   color = { fg = '#ffffff', gui = 'bold' },
 }
 
@@ -195,6 +195,12 @@ ins_right {
 ins_right {
   'branch',
   icon = '',
+  fmt = function (branch)
+    if branch == '' or branch == nil then
+      return 'No Repo'
+    end
+    return string.sub(branch, 1, 30)
+  end,
   color = { fg = colors.violet, gui = 'bold' },
 }
 
