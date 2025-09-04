@@ -195,14 +195,6 @@ require("lazy").setup({
   },
   'is0n/fm-nvim',
   {
-    'simrat39/symbols-outline.nvim',
-    config = function()
-      require("symbols-outline").setup({
-        auto_close = true
-      })
-    end
-  },
-  {
     "SmiteshP/nvim-navbuddy",
     dependencies = {
       "neovim/nvim-lspconfig",
